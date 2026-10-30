@@ -1,0 +1,229 @@
+*{
+    box-sizing:border-box
+}
+
+body{
+
+    margin:0;
+    min-height:100vh;
+    padding:24px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    gap:24px;
+
+    background-color: #0d192b;
+    color:white;
+    font-family:Outfit, sans-serif;
+}
+
+/* Main NFT Card */
+
+.card{
+    width:100%;
+    max-width:350px;
+    padding: 24px;
+
+    background-color: #14253d;
+    border-radius:15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.card__images{
+    position:relative;
+    width:100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.card__image{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+
+}
+
+.card__images-layer{
+    position:absolute;
+    inset:0;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+
+    background-color: rgba(0,255,247,0.55);
+    opacity:0;
+    transition: opacity 0.25 ease;
+
+}
+
+.card__images-layer img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
+.card__images:hover .card__images-layer{
+    opacity:1;
+}
+
+.card__title{
+    margin:22px 0 12px;
+    font-size:22px;
+    font-weight:600;
+    line-height:1.3;
+}
+
+.card__title-link{
+    color:#ffffff;
+    text-decoration: none;
+    transition:color 0.2 ease;
+}
+
+.card__title-link:hover, .card__title-link:focus-visible{
+    color:#00fff7;
+}
+
+.card__description{
+    margin:0 0 20px;
+    color: #8bacd9;
+    font-size:18px;
+    font-weight:300;
+    line-height:1.6;
+}
+
+/*Price and time conatiner*/
+
+.card__time{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #2f415b;
+    font-size: 14px;
+}
+
+/* Ethereum price */
+.card__time-left{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#00fff7;
+    font-weight: 600;
+}
+
+/* Time Remaining */
+.card__time-right{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#8bacd9;
+    font-weight: 400;
+}
+
+/* Ethereum and clock icons */
+
+.card__time-img{
+    width:17px;
+    height:17px;
+    object-fit:contain;
+}
+
+
+/* Creator Information Creator  */
+
+.card__creator{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding-top:16px;
+}
+
+/* Creator Profile Picture */
+.card__creator-image{
+    width:34px;
+    height:34px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+/* Creator text */
+.card__creator p{
+    margin:0;
+    color:#8bacd9;
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* Creation of text */
+.card__creator-label{
+    color:#8bacd9;
+}
+
+/* Creatior Name */
+
+.card__creator-name{
+    color:#ffffff;
+    text-decoration:none;
+    transition:color 0.2 ease;
+}
+
+/* Hover Effect on Creator Name */
+.card__creator-name:hover,
+.card__creator-name:focus-visible{
+    color:#00fff7;
+}
+
+/* Footer Attribution */
+
+.attribution{
+    color: #8bacd9;
+    font-size:12px;
+    text-align:center;
+    line-height:1.8;
+}
+
+/* Footer Links */
+.attribution a{
+    color:#00fff7;
+    text-decoration:none;
+}
+
+/* Footer Link Hover Effect */
+.attribution a:hover,.attribution a:focus-visible{
+    color:#ffffff;
+    text-decoration:underline;
+}
+
+/* Keyboard focus for links */
+a:focus-visible{
+    outline:2px solid #00fff7;
+    outline-offset: 4px;
+}
+
+/* Responsive design for mobile screens */
+
+@media(max-width:375px){
+    body{
+        padding:16px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .card__description{
+        font-size:16px;
+    }
+
+    .card__time{
+        font-size:12px;
+    }
+}
